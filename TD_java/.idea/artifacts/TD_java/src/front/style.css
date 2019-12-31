@@ -1,0 +1,38 @@
+.root{
+	-fx-background: white;
+}
+.anchor-pane{
+    -fx-background-color: white;
+}
+.text-field{
+    -fx-text-inner-color : #000000;
+    -fx-text-fill : #000000;
+    -fx-prompt-text-fill: gray;
+}
+.label1{
+    -fx-text-fill : black;
+    -fx-font-size: 16;
+    -fx-text-family: "System";
+}
+.label2{
+    -fx-text-fill : black;
+    -fx-font-size: 14;
+    -fx-text-family: "System";
+}
+.button{
+    -fx-font-size: 14;
+}
+.line{
+    -fx-stroke: orange;
+}
+.combo-box{
+    -fx-text-fill: orange;
+    -fx-prompt-text-fill: grey;
+}
+.radio-button{
+    -fx-font-size: 14;
+    -jfx-selected-color: #ff7f24;
+}
+.check-box{
+    -fx-font-size: 14;
+}

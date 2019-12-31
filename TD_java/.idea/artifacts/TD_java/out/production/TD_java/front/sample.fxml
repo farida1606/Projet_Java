@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" styleClass="root" stylesheets="@style.css" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="426.0" prefWidth="589.0">
+         <children>
+            <JFXScrollPane layoutY="21.0" prefHeight="405.0" prefWidth="594.0">
+               <children>
+                  <AnchorPane fx:id="fichierPane" prefHeight="200.0" prefWidth="200.0" styleClass="anchor-pane" visible="false">
+                     <children>
+                        <Line endX="396.0" layoutX="183.0" layoutY="27.0" smooth="false" startX="79.66668701171875" styleClass="line" />
+                        <JFXTextField fx:id="txtNomBase" layoutX="183.0" layoutY="63.0" prefHeight="25.0" prefWidth="278.0" styleClass="text-field" unFocusColor="#ff7f24" />
+                        <JFXButton fx:id="bCreer" layoutX="468.0" layoutY="60.0" onAction="#creer" prefHeight="30.0" prefWidth="103.0" styleClass="button" text="Créer">
+                           <font>
+                              <Font size="16.0" />
+                           </font></JFXButton>
+                        <Label layoutX="53.0" layoutY="65.0" styleClass="label2" text="Nom de la base :" />
+                        <Label layoutX="53.0" layoutY="14.0" styleClass="label1" text="Créer une base d'actualités" />
+                        <Line endX="53.666656494140625" layoutX="-44.0" layoutY="28.0" smooth="false" startX="79.66668701171875" styleClass="line" />
+                        <Line endX="396.0" layoutX="183.0" layoutY="141.0" smooth="false" startX="128.0" styleClass="line" />
+                        <Line endX="53.666656494140625" layoutX="-44.0" layoutY="140.0" smooth="false" startX="79.66668701171875" styleClass="line" />
+                        <Label layoutX="53.0" layoutY="128.0" styleClass="label1" text="Sauvegarder vos bases d'actualités" />
+                        <Label layoutX="14.0" layoutY="193.0" styleClass="label2" text="Chemin de sauvegarde :" />
+                        <JFXTextField fx:id="txtCheminSauvegarde" layoutX="176.0" layoutY="191.0" prefHeight="25.0" prefWidth="278.0" promptText="C:/Users/name/name_fichier.bin" styleClass="text-field" unFocusColor="#ff7f24" />
+                        <JFXButton fx:id="bSauvegarder" layoutX="468.0" layoutY="185.0" onAction="#sauvegarder" prefHeight="37.0" prefWidth="103.0" styleClass="button" text="Sauvegarder" />
+                        <Line endX="-13.333343505859375" endY="-0.20751953125" layoutX="23.0" layoutY="275.0" smooth="false" startX="13.333343505859375" startY="-0.20751953125" styleClass="line" />
+                        <Line endX="440.0" layoutX="135.0" layoutY="275.0" smooth="false" startX="128.0" styleClass="line" />
+                        <Label layoutX="48.0" layoutY="262.0" styleClass="label1" text="Ouvrir une base d'actualités" />
+                        <Label layoutX="47.0" layoutY="316.0" styleClass="label2" text="Chemin du fichier :" textAlignment="CENTER" />
+                        <JFXTextField fx:id="txtCheminOuvrir" layoutX="177.0" layoutY="314.0" prefHeight="25.0" prefWidth="278.0" styleClass="text-field" unFocusColor="#ff7f24" />
+                        <JFXButton fx:id="bOuvrir" layoutX="468.0" layoutY="311.0" onAction="#ouvrir" prefHeight="30.0" prefWidth="103.0" text="Ouvrir" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="afficherPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="anchor-pane" visible="false">
+                     <children>
+                        <Line endX="396.0" layoutX="183.0" layoutY="27.0" smooth="false" startX="79.66668701171875" styleClass="line" />
+                        <Label layoutX="53.0" layoutY="14.0" styleClass="label1" text="Afficher une base d'actualités" />
+                        <Line endX="53.666656494140625" layoutX="-44.0" layoutY="28.0" smooth="false" startX="79.66668701171875" styleClass="line" />
+                        <TableView fx:id="tableAffichage" layoutX="34.0" layoutY="87.0" prefHeight="296.0" prefWidth="527.0">
+                          <columns>
+                            <TableColumn fx:id="col1" prefWidth="75.0" />
+                            <TableColumn fx:id="col2" prefWidth="75.0" />
+                            <TableColumn fx:id="col3" prefWidth="75.0" />
+                             <TableColumn fx:id="col4" prefWidth="75.0" />
+                             <TableColumn fx:id="col5" prefWidth="75.0" />
+                             <TableColumn fx:id="col6" prefWidth="75.0" />
+                             <TableColumn fx:id="col7" prefWidth="75.0" />
+                              <TableColumn fx:id="col8" prefWidth="75.0" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="labelAffichage" layoutX="39.0" layoutY="54.0" styleClass="label2" text="Articles :" />
+                        <JFXButton fx:id="changerAffichage" layoutX="421.0" layoutY="49.0" onAction="#changer_typeActu" text="Afficher les photos" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="insererPane" prefHeight="200.0" prefWidth="200.0" styleClass="anchor-pane">
+                     <children>
+                        <JFXRadioButton fx:id="radioAtricleIns" layoutX="338.0" layoutY="28.0" onAction="#radioSelected" text="Article">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="group1" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="radioPhotoIns" layoutX="442.0" layoutY="28.0" onAction="#radioSelected" text="Photo" toggleGroup="$group1" />
+                        <Label layoutX="29.0" layoutY="28.0" styleClass="label2" text="Quel type d'actualité vouslez-vous insérer ?" />
+                        <AnchorPane fx:id="articlePane" layoutX="13.0" layoutY="64.0" prefHeight="321.0" prefWidth="568.0">
+                           <children>
+                              <Label layoutX="95.0" layoutY="58.0" styleClass="label2" text="Auteur :" />
+                              <Label layoutX="14.0" layoutY="97.0" styleClass="label2" text="Date de publication :" />
+                              <Label layoutX="109.0" layoutY="21.0" styleClass="label2" text="Titre :" />
+                              <Label layoutX="94.0" layoutY="135.0" styleClass="label2" text="Source :" />
+                              <Label layoutX="364.0" layoutY="21.0" styleClass="label2" text="Texte :" />
+                              <Label layoutX="111.0" layoutY="175.0" styleClass="label2" text="URL :" />
+                              <Label layoutX="4.0" layoutY="217.0" styleClass="label2" text="Disponible en version :" />
+                              <JFXTextField fx:id="txtTitreArtIns" focusColor="#ff7f24" layoutX="151.0" layoutY="19.0" prefHeight="25.0" prefWidth="166.0" styleClass="text-field" />
+                              <JFXTextField fx:id="txtAuteurArtIns" focusColor="#ff7f24" layoutX="151.0" layoutY="56.0" prefHeight="25.0" prefWidth="166.0" styleClass="text-field" />
+                              <JFXTextField fx:id="txtSourceArtIns" focusColor="#ff7f24" layoutX="151.0" layoutY="132.0" prefHeight="25.0" prefWidth="166.0" styleClass="text-field" />
+                              <JFXTextArea fx:id="txtTexteIns" focusColor="#ff7f24" layoutX="364.0" layoutY="50.0" prefHeight="177.0" prefWidth="190.0" />
+                              <JFXDatePicker fx:id="dateArtIns" defaultColor="#ff7f24" layoutX="149.0" layoutY="94.0" />
+                              <JFXTextField fx:id="txtUrlArtIns" focusColor="#ff7f24" layoutX="149.0" layoutY="173.0" prefHeight="25.0" prefWidth="166.0" styleClass="text-field" />
+                              <JFXCheckBox fx:id="checkElecIns" checkedColor="#ff7f24" layoutX="152.0" layoutY="218.0" styleClass="check-box" text="Eléctronique" />
+                              <JFXCheckBox fx:id="checkPapierIns" checkedColor="#ff7f24" layoutX="258.0" layoutY="218.0" styleClass="check-box" text="Papier" />
+                              <JFXButton fx:id="bInsererArticle" layoutX="407.0" layoutY="251.0" onAction="#insererArticle" prefHeight="37.0" prefWidth="104.0" ripplerFill="#ff7f24" styleClass="button" text="Insérer" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="photoPane" layoutX="13.0" layoutY="67.0" prefHeight="309.0" prefWidth="568.0" styleClass="anchor-pane" visible="false">
+                           <children>
+                              <Label layoutX="95.0" layoutY="58.0" styleClass="label2" text="Auteur :" />
+                              <Label layoutX="14.0" layoutY="97.0" styleClass="label2" text="Date de publication :" />
+                              <Label layoutX="109.0" layoutY="21.0" styleClass="label2" text="Titre :" />
+                              <Label layoutX="94.0" layoutY="135.0" styleClass="label2" text="Source :" />
+                              <Label layoutX="73.0" layoutY="218.0" styleClass="label2" text="Résolution :" />
+                              <Label layoutX="49.0" layoutY="262.0" styleClass="label2" text="Disponible en :" />
+                              <JFXTextField fx:id="txtTitrePhIns" focusColor="#ff7f24" layoutX="151.0" layoutY="19.0" prefHeight="25.0" prefWidth="166.0" styleClass="text-field" />
+                              <JFXTextField fx:id="txtAuteurPhIns" focusColor="#ff7f24" layoutX="151.0" layoutY="56.0" prefHeight="25.0" prefWidth="166.0" styleClass="text-field" />
+                              <JFXTextField fx:id="txtSourcePhIns" focusColor="#ff7f24" layoutX="151.0" layoutY="132.0" prefHeight="25.0" prefWidth="166.0" styleClass="text-field" />
+                              <JFXDatePicker fx:id="datePhIns" defaultColor="#ff7f24" layoutX="151.0" layoutY="94.0" />
+                              <JFXTextField fx:id="txtResolPhIns" focusColor="#ff7f24" layoutX="151.0" layoutY="216.0" prefHeight="25.0" prefWidth="166.0" promptText="en pixel" styleClass="text-field" />
+                              <JFXButton fx:id="bInsererPhoto" layoutX="406.0" layoutY="242.0" onAction="#insererPhoto" prefHeight="37.0" prefWidth="104.0" ripplerFill="#ff7f24" styleClass="button" text="Insérer" />
+                              <Label layoutX="94.0" layoutY="175.0" styleClass="label2" text="Format :" />
+                              <JFXComboBox fx:id="comboFormatIns" focusColor="#ff7f24" layoutX="151.0" layoutY="173.0" prefHeight="25.0" prefWidth="166.0" styleClass="combo-box">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="GIF" />
+                                       <String fx:value="PNG" />
+                                       <String fx:value="JPG" />
+                                       <String fx:value="PDF" />
+                                    </FXCollections>
+                                 </items>
+                              </JFXComboBox>
+                              <JFXRadioButton fx:id="radioNbPhIns" layoutX="151.0" layoutY="262.0" text="N&amp;B">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="group2" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="radioCouleurPhIns" layoutX="232.0" layoutY="262.0" text="Couleur" toggleGroup="$group2" />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="supprimerPane" prefHeight="200.0" prefWidth="200.0" styleClass="anchor-pane" visible="false" />
+                  <AnchorPane fx:id="rechercherPane" prefHeight="200.0" prefWidth="200.0" styleClass="anchor-pane">
+                     <children>
+                        <Label layoutX="15.0" layoutY="43.0" styleClass="label2" text="Entrez les mots clés  à rechercher :" />
+                        <JFXTextField fx:id="txtMotsCles" layoutX="229.0" layoutY="41.0" prefHeight="25.0" prefWidth="252.0" styleClass="text-field" />
+                        <JFXButton fx:id="bRechercher" layoutX="491.0" layoutY="39.0" styleClass="button" text="Rechercher" />
+                        <Label layoutX="13.0" layoutY="84.0" styleClass="label2" text="Nombre d'articles correspondants :" />
+                        <Label layoutX="15.0" layoutY="111.0" styleClass="label2" text="Nombre de photos correspondantes :" />
+                        <Label fx:id="lNbArtRech" layoutX="239.0" layoutY="84.0" styleClass="label2" text="0" />
+                        <Label fx:id="lNbPhRech" layoutX="257.0" layoutY="111.0" styleClass="label2" text="0" />
+                        <TableView fx:id="tableArtTrouvés" layoutX="13.0" layoutY="183.0" prefHeight="76.0" prefWidth="568.0">
+                          <columns>
+                            <TableColumn fx:id="col1" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="col2" prefWidth="75.0" text="Titre" />
+                              <TableColumn fx:id="col3" prefWidth="75.0" text="Auteur" />
+                              <TableColumn fx:id="col4" prefWidth="75.0" text="Date" />
+                              <TableColumn fx:id="col5" prefWidth="75.0" text="Source" />
+                              <TableColumn fx:id="col6" prefWidth="75.0" text="Texte" />
+                              <TableColumn fx:id="col7" prefWidth="75.0" text="URL" />
+                              <TableColumn fx:id="col8" prefWidth="75.0" text="Version" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tablePhTouvées" layoutX="15.0" layoutY="299.0" prefHeight="76.0" prefWidth="568.0">
+                          <columns>
+                            <TableColumn fx:id="col9" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="col10" prefWidth="75.0" text="Titre" />
+                              <TableColumn fx:id="col11" prefWidth="75.0" text="Auteur" />
+                              <TableColumn fx:id="col12" prefWidth="75.0" text="Date" />
+                              <TableColumn fx:id="col13" prefWidth="75.0" text="Source" />
+                              <TableColumn fx:id="col14" prefWidth="75.0" text="Format" />
+                              <TableColumn fx:id="col15" prefWidth="75.0" text="Resolution" />
+                              <TableColumn fx:id="col16" prefWidth="75.0" text="Disponible en" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="43.0" layoutY="151.0" styleClass="label2" text="Articles trouvés :" />
+                        <Label layoutX="44.0" layoutY="272.0" styleClass="label2" text="Photos trouvées :" />
+                     </children></AnchorPane>
+               </children>
+            </JFXScrollPane>
+            <MenuBar layoutY="-4.0" prefHeight="20.0" prefWidth="594.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Fichier">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#filesPane" text="Créer / Sauvegarder / Ouvrir" />
+                    <MenuItem mnemonicParsing="false" onAction="#afficherPane" text="Afficher" />
+                    <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Modifier">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#insererPane" text="Insérer" />
+                    <MenuItem mnemonicParsing="false" onAction="#supprimerPane" text="Supprimer" />
+                    <MenuItem mnemonicParsing="false" onAction="#rechercherPane" text="Rechercher" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Aide">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="A propos" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
